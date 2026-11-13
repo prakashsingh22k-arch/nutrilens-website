@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NutriLens App Icon">
+  <defs>
+    <linearGradient id="nlRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A8FF"/>
+      <stop offset="100%" stop-color="#2F80ED"/>
+    </linearGradient>
+    <linearGradient id="nlScan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3EEBD0"/>
+      <stop offset="100%" stop-color="#00BF8F"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square dark navy base -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#040B1C" stroke="#16314F" stroke-width="2"/>
+  <!-- Scan frame corners -->
+  <path d="M13 21V15a2 2 0 0 1 2-2h6M43 13h6a2 2 0 0 1 2 2v6M51 43v6a2 2 0 0 1-2 2h-6M21 51h-6a2 2 0 0 1-2-2v-6"
+        fill="none" stroke="url(#nlScan)" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- Blue ring around plate -->
+  <circle cx="32" cy="32" r="13.5" fill="#0A1328" stroke="url(#nlRing)" stroke-width="2.6"/>
+  <!-- Inner plate -->
+  <circle cx="32" cy="32" r="8.5" fill="none" stroke="#16314F" stroke-width="1.3"/>
+  <!-- Fork (left) -->
+  <path d="M27.5 25.5v4.2c0 1.1.9 2 2 2v6.8M26 25.5v3.2M29 25.5v3.2"
+        fill="none" stroke="#F1F5F9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Knife (right) -->
+  <path d="M35.5 38.5v-13c1.6.4 2.5 2 2.5 4.2 0 1.6-.7 2.8-2.5 3.3"
+        fill="none" stroke="#F1F5F9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

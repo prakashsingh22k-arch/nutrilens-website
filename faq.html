@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ | NutriLens: AI Calorie Counter</title>
+    <meta
+      name="description"
+      content="Frequently asked questions about NutriLens: AI Calorie Counter—whether NutriLens is a medical app, estimate accuracy, on-device privacy, NutriLens Pro subscriptions, 11 languages, and deleting data."
+    />
+    <meta property="og:title" content="FAQ | NutriLens: AI Calorie Counter" />
+    <meta
+      property="og:description"
+      content="Answers on AI calorie estimation disclaimers, on-device diary storage, NutriLens Pro plans, 11 languages, and data deletion."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NutriLens" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="assets/aistudio/file_00000000052c82118041c5dd34757aa6_3f6f37b0.png" />
+    <link rel="apple-touch-icon" href="assets/aistudio/file_00000000052c82118041c5dd34757aa6_3f6f37b0.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-lockup" aria-label="NutriLens Home">
+          <img
+            class="brand-icon"
+            src="assets/aistudio/file_00000000052c82118041c5dd34757aa6_3f6f37b0.png"
+            alt=""
+            width="34"
+            height="34"
+          />
+          <span><span class="brand-nutri">Nutri</span><span class="brand-lens">Lens</span></span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="features.html" class="nav-link">Features</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="faq.html" class="nav-link" aria-current="page">FAQ</a>
+          <a href="privacy.html" class="nav-link">Privacy</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-primary btn-sm" data-play-store-btn hidden>
+            <span data-play-label>Get it on Google Play</span>
+          </a>
+          <button
+            type="button"
+            class="theme-icon-btn"
+            data-theme-toggle
+            aria-pressed="true"
+            aria-label="Switch to light theme"
+            title="Toggle light/dark theme"
+          >
+            <svg class="icon-thin icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+            <svg class="icon-thin icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
+          <button
+            type="button"
+            id="mobile-menu-btn"
+            class="mobile-menu-btn"
+            aria-expanded="false"
+            aria-controls="mobile-nav-drawer"
+            aria-label="Toggle navigation menu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation" hidden>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="faq.html" aria-current="page">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="delete-account.html">Delete My Data</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-content">
+      <section class="hero-section" style="padding-bottom:2.5rem">
+        <div class="container">
+          <span class="kicker">Help Center</span>
+          <h1 class="display-title">Frequently Asked Questions</h1>
+          <p class="hero-lead">
+            Answers on AI estimation accuracy, medical disclaimers, on-device diary privacy, NutriLens Pro subscriptions, 11 supported languages, and data deletion.
+          </p>
+          <div>
+            <span class="age-badge">For adults 18+ only</span>
+          </div>
+
+          <div style="max-width:740px;margin-top:0.5rem">
+            <div class="form-group">
+              <label class="form-label" for="faq-search-input">Search questions</label>
+              <input
+                type="search"
+                id="faq-search-input"
+                class="form-input"
+                placeholder="Search (e.g., medical, accuracy, delete, languages, Pro, reminders)..."
+              />
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem">
+              <div class="segmented-control" role="group" aria-label="Filter FAQs by category">
+                <button type="button" class="segment-btn is-active" data-faq-category="all" aria-pressed="true">All Questions</button>
+                <button type="button" class="segment-btn" data-faq-category="accuracy" aria-pressed="false">Accuracy &amp; Medical</button>
+                <button type="button" class="segment-btn" data-faq-category="privacy" aria-pressed="false">Privacy &amp; Data</button>
+                <button type="button" class="segment-btn" data-faq-category="subscription" aria-pressed="false">NutriLens Pro</button>
+                <button type="button" class="segment-btn" data-faq-category="features" aria-pressed="false">Languages &amp; Units</button>
+              </div>
+            </div>
+
+            <p id="faq-count-status" class="mono text-muted" style="font-size:0.8125rem;margin-top:0.85rem" aria-live="polite">
+              Showing 11 of 11 questions
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" aria-label="FAQ Accordion List">
+        <div class="container">
+          <div class="faq-list">
+            <div class="faq-item" data-faq-item="accuracy">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-page-1">
+                  <span>Is NutriLens a medical app?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-1" class="faq-panel">
+                <p>
+                  <strong>No.</strong> NutriLens is a wellness and nutrition estimation tool—not a medical device. All calorie, macro, micronutrient, portion, and BMI numbers are AI-generated estimates and never medical advice. Always read physical product labels for allergens and consult a qualified doctor or registered dietitian for clinical nutrition guidance.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="accuracy">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-2">
+                  <span>Are the calories exact?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-2" class="faq-panel" hidden>
+                <p>
+                  <strong>No.</strong> Every calorie and macro figure in NutriLens is an AI-generated estimate—never exact. Cameras cannot always see hidden cooking oils, butter, dressings, or sauces inside mixed dishes. You can edit any ingredient or portion weight anytime.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="privacy">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-9">
+                  <span>Is NutriLens for kids or teens?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-9" class="faq-panel" hidden>
+                <p>
+                  No. NutriLens is for adults aged 18+. Users under 18 are blocked at the date-of-birth step during onboarding. Calorie tracking is not suitable for children and teens.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="privacy">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-3">
+                  <span>Does my food diary stay private on my device?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-3" class="faq-panel" hidden>
+                <p>
+                  Yes—<strong>your diary stays on your device</strong>. Before your first AI food photo scan or voice/text AI lookup, NutriLens displays a transparent Consent Screen explaining how meal requests are sent solely to generate nutritional estimates.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="privacy">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-4">
+                  <span>How do I delete my account and meal data ("Delete My Data")?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-4" class="faq-panel" hidden>
+                <p>
+                  Open NutriLens on Android → go to <strong>Settings → Privacy &amp; Data → Delete My Data</strong>, or submit a request on our <a href="delete-account.html">Delete My Data page</a> or by emailing <a href="mailto:prakashsingh22k@gmail.com">prakashsingh22k@gmail.com</a>.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="subscription">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-5">
+                  <span>What is included in NutriLens Pro (Monthly &amp; Yearly)?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-5" class="faq-panel" hidden>
+                <p>
+                  NutriLens Pro (Monthly US$3.99/month or Yearly US$19.99/year — Save 58%) includes 50 AI scans/day (fair use), prioritized AI processing, 20 voice logs/day, the 7-Day AI Meal Planner with recipes &amp; grocery lists, and the AI Nutrition Assistant (15 chats/day Monthly, 40 chats/day Yearly). See the full table on our <a href="pricing.html">Pricing page</a>.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="subscription">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-6">
+                  <span>How do I cancel my subscription?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-6" class="faq-panel" hidden>
+                <p>
+                  Subscriptions auto-renew until cancelled. You can cancel anytime in <strong>Google Play &gt; Subscriptions</strong>. Uninstalling the app or deleting local data does not automatically cancel an active Google Play billing cycle.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="features">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-10">
+                  <span>Do I need internet to use NutriLens?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-10" class="faq-panel" hidden>
+                <p>
+                  AI food photo scanning, voice logging, and the AI Nutrition Assistant chatbot require an internet connection to generate estimates. Your food diary and meal logs are stored on your device.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="accuracy">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-11">
+                  <span>How accurate are the AI food photo estimates?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-11" class="faq-panel" hidden>
+                <p>
+                  Every calorie and macro number in NutriLens is an <strong>approximation</strong>. Cameras cannot see hidden cooking oils, butter, dressings, or sauces inside mixed dishes. You can edit any ingredient or portion weight (g or oz) manually after scanning.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="features">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-7">
+                  <span>Which 11 languages does NutriLens support?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-7" class="faq-panel" hidden>
+                <p>
+                  NutriLens supports 11 languages: <strong data-languages-list="inline">English, Spanish (Español), French (Français), German (Deutsch), Italian (Italiano), Portuguese (Português), Dutch (Nederlands), Polish (Polski), Hindi (हिन्दी), Japanese (日本語), and Korean (한국어)</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq-item="features">
+              <h2>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-page-8">
+                  <span>Can I mix metric/imperial units and set meal reminders?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h2>
+              <div id="faq-page-8" class="faq-panel" hidden>
+                <p>
+                  Yes! Choose independently between <strong>kg or lb</strong>, <strong>cm or ft-in</strong>, <strong>kcal or kJ</strong>, and <strong>g or oz</strong>, and schedule custom Android background reminders for breakfast, lunch, dinner, snacks, and hydration.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:2.25rem;max-width:860px">
+            <h2 class="card-title">Still have a question?</h2>
+            <p class="card-text" style="margin-bottom:1rem">
+              Contact us at <a href="mailto:prakashsingh22k@gmail.com" class="mono">prakashsingh22k@gmail.com</a> or send a message using our contact page.
+            </p>
+            <a href="contact.html" class="btn btn-primary">Contact Support</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a href="index.html" class="brand-lockup">
+              <img
+                class="brand-icon"
+                src="assets/aistudio/file_00000000052c82118041c5dd34757aa6_3f6f37b0.png"
+                alt=""
+                width="34"
+                height="34"
+              />
+              <span><span class="brand-nutri">Nutri</span><span class="brand-lens">Lens</span></span>
+            </a>
+            <p style="margin-top:0.65rem;max-width:52ch">
+              Snap your meal. Know your calories. AI photo calorie, macronutrient, and micronutrient estimator for Android. AI estimates, not medical advice.
+            </p>
+            <p style="margin-top:0.45rem;font-size:0.82rem" data-config-price="renewalNote">
+              Auto-renews until cancelled. Cancel anytime in Google Play &gt; Subscriptions.
+            </p>
+          </div>
+          <div>
+            <p style="margin-bottom:0.4rem">
+              Support: <a href="mailto:prakashsingh22k@gmail.com" class="mono">prakashsingh22k@gmail.com</a>
+            </p>
+            <p style="font-size:0.82rem">Your diary stays on your device.</p>
+            <p style="font-size:0.82rem;margin-top:0.35rem">NutriLens is intended for users aged 18 and over.</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 NutriLens. All rights reserved.</div>
+          <ul class="footer-links" aria-label="Footer navigation">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="delete-account.html">Delete My Data</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

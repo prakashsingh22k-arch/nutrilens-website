@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriLens: AI Calorie Counter</title>
+    <meta
+      name="description"
+      content="NutriLens: AI Calorie Counter for Android. Snap your meal to estimate calories, macros, micronutrients, and portions. Includes barcode scan, voice logging, 7-day meal planner, and on-device diary privacy."
+    />
+    <meta property="og:title" content="NutriLens: AI Calorie Counter" />
+    <meta
+      property="og:description"
+      content="Snap your meal. Know your calories. AI food photo estimator with portion weights, barcode scanner, voice logging, Mifflin-St Jeor targets, and 11 languages."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NutriLens" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="assets/aistudio/file_00000000052c82118041c5dd34757aa6_3f6f37b0.png" />
+    <link rel="apple-touch-icon" href="assets/aistudio/file_00000000052c82118041c5dd34757aa6_3f6f37b0.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "NutriLens: AI Calorie Counter",
+        "operatingSystem": "Android",
+        "applicationCategory": "HealthApplication",
+        "description": "AI food photo calorie, macronutrient, and micronutrient estimator with barcode scan, voice and text logging, Mifflin-St Jeor daily targets, 7-day meal planner, and 11 languages.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-lockup" aria-label="NutriLens Home">
+          <img
+            class="brand-icon"
+            src="assets/aistudio/file_00000000052c82118041c5dd34757aa6_3f6f37b0.png"
+            alt=""
+            width="34"
+            height="34"
+          />
+          <span><span class="brand-nutri">Nutri</span><span class="brand-lens">Lens</span></span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="features.html" class="nav-link">Features</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+          <a href="privacy.html" class="nav-link">Privacy</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-primary btn-sm" data-play-store-btn hidden>
+            <span data-play-label>Get it on Google Play</span>
+          </a>
+          <button
+            type="button"
+            class="theme-icon-btn"
+            data-theme-toggle
+            aria-pressed="true"
+            aria-label="Switch to light theme"
+            title="Toggle light/dark theme"
+          >
+            <svg class="icon-thin icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+            <svg class="icon-thin icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
+          <button
+            type="button"
+            id="mobile-menu-btn"
+            class="mobile-menu-btn"
+            aria-expanded="false"
+            aria-controls="mobile-nav-drawer"
+            aria-label="Toggle navigation menu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation" hidden>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="delete-account.html">Delete My Data</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-content">
+      <!-- Hero Section with 3D Phone Mockup, Animated Scan & Floating Food Cards -->
+      <section class="hero-section">
+        <div class="hero-orb hero-orb-blue" data-parallax="0.06" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-green" data-parallax="-0.05" aria-hidden="true"></div>
+
+        <div class="container hero-grid">
+          <div>
+            <span class="kicker">NutriLens: AI Calorie Counter · Android</span>
+            <h1 class="display-title">Snap your meal. Know your calories.</h1>
+            <p class="hero-lead">
+              Estimate calories, macros, micronutrients, and portion weights in seconds from a meal photo, barcode scan, voice note, or text log—while your food diary stays privately on your device.
+            </p>
+            <div>
+              <span class="age-badge">For adults 18+ only</span>
+            </div>
+
+            <div class="hero-cta-row">
+              <a href="features.html" class="btn btn-primary">Explore Features</a>
+              <a
+                class="btn btn-secondary"
+                data-play-store-btn
+                data-play-visible="always"
+                aria-disabled="true"
+                aria-label="Coming soon to Google Play"
+              >
+                <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0">
+                  <path fill="currentColor" d="M3.6 2.3a1.4 1.4 0 0 0-.6 1.2v17a1.4 1.4 0 0 0 .6 1.2l.1.1 9.5-9.5v-.2L3.7 2.2l-.1.1z"></path>
+                  <path fill="currentColor" d="M16.4 15.5l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.1c1.1.6 1.1 1.6 0 2.2l-3.8 2.1-.1.1z"></path>
+                  <path fill="currentColor" d="M16.5 15.4L13.2 12 3.6 21.6c.4.4 1 .4 1.7 0l11.2-6.2z"></path>
+                  <path fill="currentColor" d="M16.5 8.6L5.3 2.4c-.7-.4-1.3-.4-1.7 0L13.2 12l3.3-3.4z"></path>
+                </svg>
+                <span data-play-label>Coming soon to Google Play</span>
+              </a>
+            </div>
+
+            <div class="meta-line">
+              <span>Free tier included</span>
+              <span aria-hidden="true">·</span>
+              <span>11 Languages</span>
+              <span aria-hidden="true">·</span>
+              <span>kcal / kJ · g / oz</span>
+              <span aria-hidden="true">·</span>
+              <span>Your diary stays on your device</span>
+            </div>
+
+            <div class="estimate-notice" role="note">
+              <strong>AI estimates, not medical advice:</strong> Every calorie, macro, micronutrient, portion, and BMI number in NutriLens is an estimate for wellness tracking only—never a clinical measurement. Always check product labels for allergens.
+            </div>
+          </div>
+
+          <!-- 3D Floating Phone Stage -->
+          <div class="hero-stage">
+            <div class="phone-3d-wrap">
+              <div class="phone-frame" aria-label="Interactive NutriLens Android app preview">
+                <div class="phone-notch" aria-hidden="true"></div>
+                <div class="phone-screen">
+                  <div class="phone-status-bar">
+                    <span id="phone-screen-label">Scan · AI Camera</span>
+                    <span>8:00 AM</span>
+                  </div>
+
+                  <!-- View 1: Scan -->
+                  <div data-phone-view="scan">
+                    <div class="segmented-control" role="group" aria-label="Select sample meal" style="margin-bottom:0.5rem">
+                      <button type="button" class="segment-btn is-active" data-meal-select="salmon" aria-pressed="true">Salmon</button>
+                      <button type="button" class="segment-btn" data-meal-select="avocado" aria-pressed="false">Avocado</button>
+                      <button type="button" class="segment-btn" data-meal-select="oats" aria-pressed="false">Oats</button>
+                      <button type="button" class="segment-btn" data-unit-mode="imperial" aria-pressed="false" title="Switch to kJ / oz">kJ·oz</button>
+                      <button type="button" class="segment-btn is-active" data-unit-mode="metric" aria-pressed="true" title="Switch to kcal / g">kcal·g</button>
+                    </div>
+
+                    <div class="scan-viewfinder">
+                      <div class="scan-line" aria-hidden="true"></div>
+                      <div class="scan-bounding-box">
+                        <span id="demo-meal-emoji" class="meal-emoji" aria-hidden="true">🥗</span>
+                        <div id="demo-meal-title" class="meal-title">Grilled Salmon &amp; Quinoa Bowl</div>
+                        <div id="demo-meal-energy" class="scan-kcal-readout">~540 kcal (est.)</div>
+                        <div id="demo-meal-portion" class="mono text-muted" style="font-size:0.74rem;margin-top:0.15rem">
+                          Est. portion: ~340 g
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="macro-grid" style="margin-top:0.55rem">
+                      <div class="macro-cell">
+                        <span class="macro-label">Protein</span>
+                        <span id="demo-meal-protein" class="macro-val text-protein">~38 g</span>
+                      </div>
+                      <div class="macro-cell">
+                        <span class="macro-label">Carbs</span>
+                        <span id="demo-meal-carbs" class="macro-val text-carbs">~42 g</span>
+                      </div>
+                      <div class="macro-cell">
+                        <span class="macro-label">Fats</span>
+                        <span id="demo-meal-fat" class="macro-val text-fats">~22 g</span>
+                      </div>
+                    </div>
+
+                    <div id="demo-meal-micros" class="mono text-muted" style="font-size:0.72rem;text-align:center;margin-top:0.5rem">
+                      Est. Fiber 6g · Iron 18% DV · Omega-3 1.8g
+                    </div>
+                  </div>
+
+                  <!-- View 2: Diary -->
+                  <div data-phone-view="diary" hidden>
+                    <div style="display:flex;flex-direction:column;gap:0.5rem">
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.65rem 0.75rem;display:flex;justify-content:space-between;align-items:center">
+                        <div>
+                          <div style="font-size:0.84rem;font-weight:700">🍳 Oats &amp; Eggs</div>
+                          <div class="mono text-muted" style="font-size:0.7rem">8:00 AM · Photo scan</div>
+                        </div>
+                        <span class="mono text-mint" style="font-weight:700">~420 kcal</span>
+                      </div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.65rem 0.75rem;display:flex;justify-content:space-between;align-items:center">
+                        <div>
+                          <div style="font-size:0.84rem;font-weight:700">🥗 Salmon &amp; Quinoa</div>
+                          <div class="mono text-muted" style="font-size:0.7rem">1:15 PM · Voice log</div>
+                        </div>
+                        <span class="mono text-mint" style="font-weight:700">~540 kcal</span>
+                      </div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.65rem 0.75rem;display:flex;justify-content:space-between;align-items:center">
+                        <div>
+                          <div style="font-size:0.84rem;font-weight:700">💧 Daily Water</div>
+                          <div class="mono text-muted" style="font-size:0.7rem">7 of 10 glasses</div>
+                        </div>
+                        <span class="mono" style="color:var(--primary);font-weight:700">1.75 / 2.5 L</span>
+                      </div>
+                      <div class="mono text-muted" style="font-size:0.72rem;text-align:center;padding-top:0.25rem">
+                        Your diary stays on your device
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- View 3: Progress -->
+                  <div data-phone-view="progress" hidden>
+                    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.85rem;text-align:center">
+                      <div class="text-muted" style="font-size:0.74rem">Weight Goal Progress</div>
+                      <div class="mono text-mint" style="font-size:1.35rem;font-weight:700;margin:0.2rem 0">70.4 kg → 68.0 kg</div>
+                      <div class="mono text-muted" style="font-size:0.72rem">Estimated BMI: ~22.9 · 7-day avg ~1,940 kcal</div>
+                    </div>
+                    <div class="macro-grid" style="margin-top:0.55rem">
+                      <div class="macro-cell">
+                        <span class="macro-label">Avg P</span>
+                        <span class="macro-val text-protein">142 g</span>
+                      </div>
+                      <div class="macro-cell">
+                        <span class="macro-label">Avg C</span>
+                        <span class="macro-val text-carbs">196 g</span>
+                      </div>
+                      <div class="macro-cell">
+                        <span class="macro-label">Avg F</span>
+                        <span class="macro-val text-fats">64 g</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- View 4: Meals -->
+                  <div data-phone-view="meals" hidden>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem">
+                      <span style="font-size:0.82rem;font-weight:700">7-Day AI Meal Planner</span>
+                      <span class="pro-badge">PRO</span>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:0.45rem">
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0.55rem 0.7rem">
+                        <div style="font-size:0.8rem;font-weight:700">Mediterranean High-Protein</div>
+                        <div class="text-muted" style="font-size:0.72rem">3 meals + recipes · ~1,980 kcal/day (est.)</div>
+                      </div>
+                      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0.55rem 0.7rem">
+                        <div style="font-size:0.8rem;font-weight:700">🛒 Grocery List Generated</div>
+                        <div class="text-muted" style="font-size:0.72rem">18 items · Allergen note: always check labels</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- View 5: Targets -->
+                  <div data-phone-view="targets" hidden>
+                    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0.8rem;text-align:center;margin-bottom:0.5rem">
+                      <div class="text-muted" style="font-size:0.72rem">Mifflin-St Jeor Daily Target (est.)</div>
+                      <div class="mono text-mint" style="font-size:1.35rem;font-weight:700">~2,050 kcal</div>
+                      <div class="mono text-muted" style="font-size:0.7rem">Diet: Balanced · Reminders: 8AM / 1PM / 7PM</div>
+                    </div>
+                    <div class="macro-grid">
+                      <div class="macro-cell">
+                        <span class="macro-label">Protein</span>
+                        <span class="macro-val text-protein">154 g</span>
+                      </div>
+                      <div class="macro-cell">
+                        <span class="macro-label">Carbs</span>
+                        <span class="macro-val text-carbs">205 g</span>
+                      </div>
+                      <div class="macro-cell">
+                        <span class="macro-label">Fats</span>
+                        <span class="macro-val text-fats">68 g</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Mock Android Bottom-Nav Component -->
+                  <div class="phone-bottom-nav" role="tablist" aria-label="App screen tabs">
+                    <button type="button" class="bottom-nav-btn is-active" data-phone-tab="scan" role="tab" aria-selected="true">
+                      <svg class="icon-thin" viewBox="0 0 24 24" style="width:15px;height:15px" aria-hidden="true">
+                        <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                      <span>Scan</span>
+                    </button>
+                    <button type="button" class="bottom-nav-btn" data-phone-tab="diary" role="tab" aria-selected="false">
+                      <svg class="icon-thin" viewBox="0 0 24 24" style="width:15px;height:15px" aria-hidden="true">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                      </svg>
+                      <span>Diary</span>
+                    </button>
+                    <button type="button" class="bottom-nav-btn" data-phone-tab="progress" role="tab" aria-selected="false">
+                      <svg class="icon-thin" viewBox="0 0 24 24" style="width:15px;height:15px" aria-hidden="true">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                      </svg>
+                      <span>Progress</span>
+                    </button>
+                    <button type="button" class="bottom-nav-btn" data-phone-tab="meals" role="tab" aria-selected="false">
+                      <svg class="icon-thin" viewBox="0 0 24 24" style="width:15px;height:15px" aria-hidden="true">
+                        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                        <path d="M7 2v20" />
+                        <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+                      </svg>
+                      <span>Meals</span>
+                    </button>
+                    <button type="button" class="bottom-nav-btn" data-phone-tab="targets" role="tab" aria-selected="false">
+                      <svg class="icon-thin" viewBox="0 0 24 24" style="width:15px;height:15px" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                      </svg>
+                      <span>Targets</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Food Cards with Count-up Readouts -->
+            <div class="floating-cards-row">
+              <div class="floating-food-card">
+                <div class="floating-card-meta">
+                  <span>8:00 AM</span>
+                  <span class="text-mint" data-countup="420" data-countup-prefix="~" data-countup-suffix=" kcal">~420 kcal</span>
+                </div>
+                <div class="floating-card-title">Berry Oats &amp; Whey</div>
+                <div class="floating-card-macros">
+                  <span class="text-protein">28g P</span>
+                  <span class="text-carbs">48g C</span>
+                  <span class="text-fats">11g F</span>
+                </div>
+              </div>
+
+              <div class="floating-food-card">
+                <div class="floating-card-meta">
+                  <span>1:15 PM</span>
+                  <span class="text-mint" data-countup="516" data-countup-prefix="~" data-countup-suffix=" kcal">~516 kcal</span>
+                </div>
+                <div class="floating-card-title">Herb Chicken Bowl</div>
+                <div class="floating-card-macros">
+                  <span class="text-protein">44g P</span>
+                  <span class="text-carbs">39g C</span>
+                  <span class="text-fats">18g F</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works in 3 Steps -->
+      <section class="section section-alt" aria-labelledby="how-it-works-heading">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <span class="kicker">Three Simple Steps</span>
+            <h2 id="how-it-works-heading" class="section-title">From Meal Photo to Macro Targets in Seconds</h2>
+            <p class="section-subtitle">
+              Log meals by camera, barcode, voice, or text—and keep your full diary on your Android device.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="card" data-reveal style="--reveal-delay: 0ms">
+              <span class="card-index">
+                <svg class="icon-thin" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+                01. Capture
+              </span>
+              <h3 class="card-title">Snap, Scan, Speak, or Type</h3>
+              <p class="card-text">
+                After reviewing our clear Consent Screen, take a food photo, scan a barcode, speak naturally, or type a meal description in any of 11 languages.
+              </p>
+            </article>
+
+            <article class="card" data-reveal style="--reveal-delay: 80ms">
+              <span class="card-index">
+                <svg class="icon-thin" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 20V10" />
+                  <path d="M18 20V4" />
+                  <path d="M6 20v-4" />
+                </svg>
+                02. Estimate
+              </span>
+              <h3 class="card-title">Review Portion &amp; Nutrition</h3>
+              <p class="card-text">
+                NutriLens estimates portion weight (g or oz), calories (kcal or kJ), protein, carbs, fats, and micronutrients—editable anytime.
+              </p>
+            </article>
+
+            <article class="card" data-reveal style="--reveal-delay: 160ms">
+              <span class="card-index">
+                <svg class="icon-thin" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                03. Track Privately
+              </span>
+              <h3 class="card-title">Stay Consistent On-Device</h3>
+              <p class="card-text">
+                Track against your Mifflin-St Jeor daily targets, log water, get Android meal reminders, and know your diary stays on your device.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real-App Features Bento Grid -->
+      <section class="section" aria-labelledby="features-heading">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <span class="kicker">Built Around the Real Android App</span>
+            <h2 id="features-heading" class="section-title">Everything Inside NutriLens</h2>
+            <p class="section-subtitle">
+              Designed for everyday tracking across the US, UK, Canada, Australia, EU, and beyond—with transparent estimates and user-first data control.
+            </p>
+          </div>
+
+          <div class="bento-grid">
+            <article class="card bento-span-2" data-reveal style="--reveal-delay: 0ms">
+              <span class="card-index">AI Vision &amp; Portions</span>
+              <h3 class="card-title">AI Food Photo Scan with Portion Estimates</h3>
+              <p class="card-text">
+                Identify mixed dishes, estimate gram/ounce portions, and review estimated calories (kcal/kJ), protein, carbs, fats, and micronutrients. All outputs are estimates—edit ingredients freely if you added oils or sauces.
+              </p>
+            </article>
+
+            <article class="card" data-reveal style="--reveal-delay: 70ms">
+              <span class="card-index">Fast Input</span>
+              <h3 class="card-title">Barcode, Voice &amp; Text Logging</h3>
+              <p class="card-text">
+                Scan packaged barcodes, speak your meal hands-free, or type natural descriptions when you log after eating.
+              </p>
+            </article>
+
+            <article class="card" data-reveal style="--reveal-delay: 120ms">
+              <span class="card-index">Science-Backed Formula</span>
+              <h3 class="card-title">Mifflin-St Jeor Targets &amp; BMI</h3>
+              <p class="card-text">
+                Automatic daily calorie and macro target estimates from your age, height, weight, activity level, and weight goal—plus water tracking.
+              </p>
+            </article>
+
+            <article class="card bento-span-2" data-reveal style="--reveal-delay: 160ms">
+              <span class="card-index">11 Diet Preferences &amp; Allergen Awareness</span>
+              <h3 class="card-title">Tailored to How You Eat</h3>
+              <p class="card-text">
+                Choose your preference across 11 supported diet styles, with built-in allergen awareness notes. <strong>Reminder:</strong> AI estimates cannot detect hidden cross-contamination—always check physical food labels.
+              </p>
+              <div class="diet-chip-list" aria-label="11 supported diet preferences">
+                <span class="diet-chip">Balanced</span>
+                <span class="diet-chip">High Protein</span>
+                <span class="diet-chip">Low Carb</span>
+                <span class="diet-chip">Keto</span>
+                <span class="diet-chip">Mediterranean</span>
+                <span class="diet-chip">Vegetarian</span>
+                <span class="diet-chip">Vegan</span>
+                <span class="diet-chip">Gluten-Free</span>
+                <span class="diet-chip">Dairy-Free</span>
+                <span class="diet-chip">Halal</span>
+                <span class="diet-chip">Kosher</span>
+              </div>
+            </article>
+
+            <article class="card" data-reveal style="--reveal-delay: 200ms">
+              <span class="card-index"><span class="pro-badge">PRO</span> Meal Planning</span>
+              <h3 class="card-title">7-Day AI Meal Planner &amp; Grocery List</h3>
+              <p class="card-text">
+                Generate a full week of macro-matched meal plans, step-by-step recipes, and an organized grocery list inside NutriLens Pro.
+              </p>
+            </article>
+
+            <article class="card" data-reveal style="--reveal-delay: 240ms">
+              <span class="card-index">Android Habit Tools</span>
+              <h3 class="card-title">Meal Schedule &amp; Reminders</h3>
+              <p class="card-text">
+                Set custom breakfast, lunch, dinner, and hydration schedules with reliable background reminders on Android.
+              </p>
+            </article>
+
+            <article class="card" data-reveal style="--reveal-delay: 280ms">
+              <span class="card-index">Roadmap · In development</span>
+              <h3 class="card-title">Smart Activity Planner</h3>
+              <p class="card-text">
+                Adaptive daily activity suggestions aligned with your energy goals—currently in development.
+              </p>
+            </article>
+
+            <article class="card bento-span-2" data-reveal style="--reveal-delay: 320ms">
+              <span class="card-index">Global &amp; Private</span>
+              <h3 class="card-title">11 Languages, Flexible Units &amp; On-Device Diary</h3>
+              <p class="card-text">
+                Mix kg/lb, cm/ft-in, kcal/kJ, and g/oz freely. Your diary stays on your device, protected by a clear Consent Screen and one-tap Delete My Data controls.
+              </p>
+              <div class="diet-chip-list" data-languages-list="chips" aria-label="11 supported languages"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phone-Frame App Screens (Hydrated from CONFIG.SCREENSHOTS with Clean Fallbacks) -->
+      <section class="section section-alt" aria-labelledby="screens-heading">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <span class="kicker">Inside NutriLens</span>
+            <h2 id="screens-heading" class="section-title">Clean Dark UI Built for Daily Logging</h2>
+            <p class="section-subtitle">
+              Phone-frame previews of the Scan, Diary, Pro Meals, and Mifflin-St Jeor Targets screens.
+            </p>
+          </div>
+
+          <div id="screenshots-gallery" class="screenshots-grid"></div>
+        </div>
+      </section>
+
+      <!-- Pricing Section (USD Only, No Currency Tabs, Single CONFIG Source) -->
+      <section class="section" aria-labelledby="pricing-heading">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <span class="kicker">NutriLens Free &amp; NutriLens Pro</span>
+            <h2 id="pricing-heading" class="section-title">Start Free. Upgrade to NutriLens Pro Anytime.</h2>
+            <p class="section-subtitle">
+              Try AI photo scanning, voice logging, and on-device diary tracking for free—or unlock higher daily limits, prioritized AI, the AI Nutrition Assistant, and the 7-Day Meal Planner.
+            </p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="pricing-card" data-reveal style="--reveal-delay: 0ms">
+              <div>
+                <span class="card-index">Starter</span>
+                <h3 class="card-title">NutriLens Free</h3>
+                <div class="price-figure">
+                  US$0
+                  <span class="price-period">Free forever</span>
+                </div>
+                <ul class="feature-check-list">
+                  <li>✓ <span data-config-limit="free.scansPerDay">5 AI scans/day</span></li>
+                  <li>✓ <span data-config-limit="free.voiceLogsPerDay">3 voice logs/day</span></li>
+                  <li>✓ Text &amp; barcode food logging</li>
+                  <li>✓ Water tracker, weight goals &amp; BMI</li>
+                  <li>✓ Mifflin-St Jeor targets &amp; 11 languages</li>
+                </ul>
+              </div>
+              <a class="btn btn-secondary" data-play-store-btn hidden>
+                <span data-play-label>Get it on Google Play</span>
+              </a>
+            </article>
+
+            <article class="pricing-card pricing-card-featured" data-reveal style="--reveal-delay: 80ms">
+              <div>
+                <span class="card-index" style="gap:0.45rem">
+                  <span class="pro-badge">BEST VALUE</span>
+                  <span class="mint-badge" data-config-price="yearlyBadge">Save 58%</span>
+                </span>
+                <h3 class="card-title">NutriLens Pro Yearly</h3>
+                <div class="price-figure">
+                  <span data-config-price="yearly">US$19.99</span>
+                  <span class="price-period">/ year · <span data-config-price="yearlyEquiv">~US$1.67/month</span></span>
+                </div>
+                <ul class="feature-check-list">
+                  <li>✓ <strong><span data-config-limit="proYearly.scansPerDay">50 AI scans/day (fair use)</span></strong></li>
+                  <li>✓ Prioritized AI processing</li>
+                  <li>✓ <span data-config-limit="proYearly.voiceLogsPerDay">20 voice logs/day</span></li>
+                  <li>✓ AI Nutrition Assistant (<strong><span data-config-limit="proYearly.aiChatsPerDay">40 chats/day</span></strong>)</li>
+                  <li>✓ 7-Day AI Meal Planner, recipes &amp; grocery list</li>
+                </ul>
+              </div>
+              <a class="btn btn-upgrade" data-play-store-btn hidden>
+                <span data-play-label>Get it on Google Play</span>
+              </a>
+            </article>
+
+            <article class="pricing-card" data-reveal style="--reveal-delay: 160ms">
+              <div>
+                <span class="card-index"><span class="pro-badge">PRO</span> Monthly</span>
+                <h3 class="card-title">NutriLens Pro Monthly</h3>
+                <div class="price-figure">
+                  <span data-config-price="monthly">US$3.99</span>
+                  <span class="price-period">/ month</span>
+                </div>
+                <ul class="feature-check-list">
+                  <li>✓ <strong><span data-config-limit="proMonthly.scansPerDay">50 AI scans/day (fair use)</span></strong></li>
+                  <li>✓ Prioritized AI processing</li>
+                  <li>✓ <span data-config-limit="proMonthly.voiceLogsPerDay">20 voice logs/day</span></li>
+                  <li>✓ AI Nutrition Assistant (<strong><span data-config-limit="proMonthly.aiChatsPerDay">15 chats/day</span></strong>)</li>
+                  <li>✓ 7-Day AI Meal Planner, recipes &amp; grocery list</li>
+                </ul>
+              </div>
+              <a class="btn btn-primary" data-play-store-btn hidden>
+                <span data-play-label>Get it on Google Play</span>
+              </a>
+            </article>
+          </div>
+
+          <div class="estimate-notice" style="margin-top:1.5rem">
+            <strong data-config-price="localPriceNote">Local price is shown in Google Play</strong>.
+            <span data-config-price="renewalNote">Auto-renews until cancelled. Cancel anytime in Google Play &gt; Subscriptions.</span>
+            <a href="pricing.html" style="margin-left:0.5rem">View full Free vs Pro table →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Accordion Preview -->
+      <section class="section section-alt" aria-labelledby="faq-preview-heading">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <span class="kicker">Quick Answers</span>
+            <h2 id="faq-preview-heading" class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">
+              Explore our full <a href="faq.html">FAQ page</a> for detailed answers on AI estimation, privacy, and subscriptions.
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>
+                <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="home-faq-1">
+                  <span>Are the calories exact?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div id="home-faq-1" class="faq-panel">
+                <p>
+                  <strong>No.</strong> All calorie, macronutrient, micronutrient, portion weight, and BMI numbers are AI-generated estimates, not clinical measurements or medical advice. You can edit any food or portion weight anytime.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <h3>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="home-faq-2">
+                  <span>Is NutriLens for kids or teens?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div id="home-faq-2" class="faq-panel" hidden>
+                <p>
+                  No. NutriLens is for adults aged 18+. Users under 18 are blocked at the date-of-birth step during onboarding. Calorie tracking is not suitable for children and teens.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <h3>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="home-faq-3">
+                  <span>Do I need internet to use NutriLens?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div id="home-faq-3" class="faq-panel" hidden>
+                <p>
+                  AI photo scanning, voice logging, and the AI Nutrition Assistant require an internet connection to generate estimates. Your food diary and meal logs stay stored locally on your device.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <h3>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="home-faq-4">
+                  <span>Where is my food diary stored, and how do I delete my data?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div id="home-faq-4" class="faq-panel" hidden>
+                <p>
+                  Your diary stays on your device. Meal photos and text/voice requests are only sent for AI estimation after you accept our in-app Consent Screen. You can erase your records anytime inside Settings → Privacy &amp; Data → Delete My Data or via our <a href="delete-account.html">Delete My Data page</a>.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <h3>
+                <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="home-faq-5">
+                  <span>How do I cancel my subscription?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div id="home-faq-5" class="faq-panel" hidden>
+                <p>
+                  Subscriptions auto-renew until cancelled. You can cancel anytime in <strong>Google Play &gt; Subscriptions</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Call-to-Action -->
+      <section class="section" aria-labelledby="final-cta-heading">
+        <div class="container">
+          <div class="card" style="text-align:center;padding:2.75rem 1.5rem" data-reveal>
+            <span class="kicker">Android Launch</span>
+            <h2 id="final-cta-heading" class="section-title">Snap Your Meal. Stay Consistent.</h2>
+            <p class="section-subtitle" style="margin:0 auto 1.65rem">
+              AI-powered calorie &amp; macro estimates, 11 diet preferences, Mifflin-St Jeor targets, and on-device privacy—built for everyday life.
+            </p>
+            <div class="hero-cta-row" style="justify-content:center;margin-bottom:0">
+              <a
+                class="btn btn-secondary"
+                data-play-store-btn
+                data-play-visible="always"
+                aria-disabled="true"
+                aria-label="Coming soon to Google Play"
+              >
+                <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0">
+                  <path fill="currentColor" d="M3.6 2.3a1.4 1.4 0 0 0-.6 1.2v17a1.4 1.4 0 0 0 .6 1.2l.1.1 9.5-9.5v-.2L3.7 2.2l-.1.1z"></path>
+                  <path fill="currentColor" d="M16.4 15.5l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.1c1.1.6 1.1 1.6 0 2.2l-3.8 2.1-.1.1z"></path>
+                  <path fill="currentColor" d="M16.5 15.4L13.2 12 3.6 21.6c.4.4 1 .4 1.7 0l11.2-6.2z"></path>
+                  <path fill="currentColor" d="M16.5 8.6L5.3 2.4c-.7-.4-1.3-.4-1.7 0L13.2 12l3.3-3.4z"></path>
+                </svg>
+                <span data-play-label>Coming soon to Google Play</span>
+              </a>
+              <a href="pricing.html" class="btn btn-primary">Compare Free &amp; Pro</a>
+              <a href="contact.html" class="btn btn-secondary">Contact Support</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a href="index.html" class="brand-lockup">
+              <img
+                class="brand-icon"
+                src="assets/aistudio/file_00000000052c82118041c5dd34757aa6_3f6f37b0.png"
+                alt=""
+                width="34"
+                height="34"
+              />
+              <span><span class="brand-nutri">Nutri</span><span class="brand-lens">Lens</span></span>
+            </a>
+            <p style="margin-top:0.65rem;max-width:52ch">
+              Snap your meal. Know your calories. AI photo calorie, macronutrient, and micronutrient estimator for Android. AI estimates, not medical advice.
+            </p>
+            <p style="margin-top:0.45rem;font-size:0.82rem" data-config-price="renewalNote">
+              Auto-renews until cancelled. Cancel anytime in Google Play &gt; Subscriptions.
+            </p>
+          </div>
+          <div>
+            <p style="margin-bottom:0.4rem">
+              Support: <a href="mailto:prakashsingh22k@gmail.com" class="mono">prakashsingh22k@gmail.com</a>
+            </p>
+            <p style="font-size:0.82rem">Your diary stays on your device.</p>
+            <p style="font-size:0.82rem;margin-top:0.35rem">NutriLens is intended for users aged 18 and over.</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 NutriLens. All rights reserved.</div>
+          <ul class="footer-links" aria-label="Footer navigation">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="delete-account.html">Delete My Data</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

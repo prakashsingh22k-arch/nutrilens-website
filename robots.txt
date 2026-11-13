@@ -1,0 +1,5 @@
+# robots.txt for NutriLens: AI Calorie Counter
+User-agent: *
+Allow: /
+
+Sitemap: https://prakashsingh22k-arch.github.io/nutrilens-website/sitemap.xml
